@@ -37,9 +37,17 @@
         <img src="vapsticki.png" alt="Background" class="max-w-none w-[180%] h-auto rotate-12 filter blur-[1px] animate-float transition-all transform translate-x-[50%]">
     </div>
 
-    <nav class="fixed w-full top-0 left-0 z-50 px-6 py-4 flex justify-center items-center bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300">
-        <h1 class="text-3xl font-light tracking-widest text-slate-800">VAP Stick Shop</h1>
-    </nav>
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl px-8 py-4 flex justify-between items-center bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl rounded-full shadow-2xl border border-white/20 transition-all duration-500">
+    
+    <h1 class="text-2xl font-black tracking-tighter bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transition-transform cursor-default">
+        VAP Stick
+    </h1>
+
+    <button id="darkModeToggle" class="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-all group shadow-inner border border-white/10">
+        <span id="sunIcon" class="text-xl">☀️</span>
+        <span id="moonIcon" class="hidden text-xl text-indigo-200">🌙</span>
+    </button>
+</nav>
 
     <header class="relative pt-40 pb-24 px-6 text-center z-10 animate-fade-in">
         <div class="max-w-2xl mx-auto relative z-10">
@@ -274,4 +282,28 @@
     </footer>
 
 </body>
+    <script>
+    const btn = document.getElementById('darkModeToggle');
+    const sun = document.getElementById('sunIcon');
+    const moon = document.getElementById('moonIcon');
+    const body = document.body;
+
+    btn.addEventListener('click', () => {
+        // Przełączanie klasy 'dark' na body (wymagane dla Tailwind dark mode)
+        document.documentElement.classList.toggle('dark');
+        
+        // Zmiana kolorów tła body
+        if (document.documentElement.classList.contains('dark')) {
+            body.classList.remove('from-indigo-400', 'via-purple-300', 'to-pink-200');
+            body.classList.add('from-slate-900', 'via-indigo-950', 'to-slate-900');
+            sun.classList.add('hidden');
+            moon.classList.remove('hidden');
+        } else {
+            body.classList.add('from-indigo-400', 'via-purple-300', 'to-pink-200');
+            body.classList.remove('from-slate-900', 'via-indigo-950', 'to-slate-900');
+            sun.classList.remove('hidden');
+            moon.classList.add('hidden');
+        }
+    });
+</script>
 </html>
