@@ -33,9 +33,11 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-indigo-400 via-purple-300 to-pink-200 text-slate-900 antialiased overflow-x-hidden min-h-screen">
-<div class="fixed inset-0 z-0 flex items-center justify-center opacity-30 pointer-events-none">
-    <img src="vapsticks.png" alt="Background" class="max-w-none w-[180%] h-auto rotate-12 filter blur-[1px] animate-float transition-all transform translate-x-[50%]">
-</div>
+
+    <div class="fixed inset-0 z-0 flex items-center justify-center opacity-30 pointer-events-none">
+        <img src="vapsticks.png" alt="Background" class="max-w-none w-[180%] h-auto rotate-12 filter blur-[1px] animate-float transition-all transform translate-x-[50%]">
+    </div>
+
     <nav class="fixed w-full top-0 left-0 z-50 px-6 py-4 flex justify-center items-center bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300">
         <h1 class="text-3xl font-light tracking-widest text-slate-800">VAP Stick Shop</h1>
     </nav>
@@ -59,142 +61,136 @@
         </div>
     </header>
 
-    <section class="py-16 px-6 max-w-6xl mx-auto animate-fade-in delay-100">
+    <section class="relative z-10 py-16 px-6 max-w-6xl mx-auto animate-fade-in delay-100">
         <h3 class="text-3xl font-bold mb-10 text-center text-slate-800">Dlaczego warto kupić <span class="text-indigo-400">VAP Stick?</span></h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="bg-white/50 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/30">
+            <div class="bg-white/50 backdrop-blur-md p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/30">
                 <div class="text-5xl mb-4 animate-float">🌿</div>
                 <h4 class="text-xl font-bold mb-3 text-slate-800">100% Naturalne</h4>
-                <p class="text-slate-500 text-sm leading-relaxed">Opieramy się wyłącznie na naturalnych ekstraktach i olejkach. Czysty smak, zero niepotrzebnej chemii.</p>
+                <p class="text-slate-700 text-sm leading-relaxed">Opieramy się wyłącznie na naturalnych ekstraktach i olejkach. Czysty smak, zero niepotrzebnej chemii.</p>
             </div>
-            <div class="bg-white/50 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/30">
+            <div class="bg-white/50 backdrop-blur-md p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/30">
                 <div class="text-5xl mb-4 animate-float" style="animation-delay: 1s;">💨</div>
                 <h4 class="text-xl font-bold mb-3 text-slate-800">Bez Nikotyny</h4>
-                <p class="text-slate-500 text-sm leading-relaxed">Idealna alternatywa dla starych nawyków. Ciesz się smakiem i odruchem bez uzależniających substancji.</p>
+                <p class="text-slate-700 text-sm leading-relaxed">Idealna alternatywa dla starych nawyków. Ciesz się smakiem i odruchem bez uzależniających substancji.</p>
             </div>
-            <div class="bg-white/50 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/30">
+            <div class="bg-white/50 backdrop-blur-md p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/30">
                 <div class="text-5xl mb-4 animate-float" style="animation-delay: 2s;">🕒</div>
-                <h4 class="text-xl font-bold mb-3 text-slate-800">Używaj gdziekolwiek i kiedykolwiek</h4>
-                <p class="text-slate-500 text-sm leading-relaxed">Poczuj świeżość, relaks lub uderzenie energii dokładnie w tym momencie, w którym tego potrzebujesz.</p>
+                <h4 class="text-xl font-bold mb-3 text-slate-800">Używaj gdziekolwiek</h4>
+                <p class="text-slate-700 text-sm leading-relaxed">Poczuj świeżość, relaks lub uderzenie energii dokładnie w tym momencie, w którym tego potrzebujesz.</p>
             </div>
         </div>
     </section>
 
-    <section id="cele" class="py-12 px-6 max-w-6xl mx-auto animate-fade-in delay-200">
-        <h3 class="text-4xl font-bold mb-10 text-center text-slate-800">Wybierz swój <span class="text-[#40c4ff]">aromat</span></h3>
+    <section id="cele" class="relative z-10 py-12 px-6 max-w-6xl mx-auto animate-fade-in delay-200">
+        <h3 class="text-4xl font-bold mb-10 text-center text-white drop-shadow-md">Wybierz swój <span class="text-[#ffe082]">aromat</span></h3>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <div class="bg-gradient-to-b from-[#29b6f6]/50 to-[#0288d1]/50 p-6 rounded-[2rem] text-center flex flex-col items-center relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6 flex items-center gap-2 z-10 shadow-md">
-                    ❄️ Orzeźwienie
-                </span>
-                <h5 class="text-white text-2xl font-bold mb-1 z-10">Patyczek zapachowo-smakowy</h5>
-                <p class="text-white/80 text-sm mb-8 z-10">Lodowata Mięta</p>
-                <div class="mb-8 h-48 flex items-center justify-center">
-                    <img src="mieta.png" alt="V.A.P. Stick Mięta" class="h-full object-contain drop-shadow-2xl transition group-hover:scale-110 duration-500">
+            <div class="group bg-gradient-to-b from-[#29b6f6]/60 to-[#0288d1]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+                <div class="h-64 w-full flex items-center justify-center bg-white/10 relative">
+                    <img src="mieta.png" alt="Mięta" class="h-4/5 object-contain transition duration-500 group-hover:scale-110 drop-shadow-2xl">
                 </div>
-                <div>
-                    <style>.pp-UMRY9D6XUQC5Y{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                        <input class="pp-UMRY9D6XUQC5Y" type="submit" value="Kup teraz" />
-                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                        <section style="font-size: 0.75rem; color: white;"> Obsługiwane przez <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;filter:brightness(0) invert(1);"/></section>
+                <div class="p-8 text-center flex flex-col items-center">
+                    <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">❄️ Orzeźwienie</span>
+                    <h5 class="text-white text-xl font-bold">Patyczek smakowo - zapachowy</h5>
+                    <p class="text-white/80 text-sm mb-4">Lodowata Mięta</p>
+                    <div class="mb-6 text-white">
+                        <span class="line-through text-white/50 text-sm font-light">25,00 zł</span>
+                        <span class="text-2xl font-extrabold ml-2">20,00 zł</span>
+                    </div>
+                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
+                        <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
                     </form>
                 </div>
             </div>
 
-            <div class="bg-gradient-to-b from-amber-400/50 to-orange-600/50 p-6 rounded-[2rem] text-center flex flex-col items-center relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6 flex items-center gap-2 z-10 shadow-md">
-                    🍮 Słodycz
-                </span>
-                <h5 class="text-white text-2xl font-bold mb-1 z-10">Patyczek zapachowo-smakowy</h5>
-                <p class="text-white/80 text-sm mb-8 z-10">Karmelowy Slush</p>
-                <div class="mb-8 h-48 flex items-center justify-center">
-                    <img src="karmel.png" alt="V.A.P. Stick Karmel" class="h-full object-contain drop-shadow-2xl transition group-hover:scale-110 duration-500">
+            <div class="group bg-gradient-to-b from-amber-400/60 to-orange-600/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+                <div class="h-64 w-full flex items-center justify-center bg-white/10 relative">
+                    <img src="karmel.png" alt="Karmel" class="h-4/5 object-contain transition duration-500 group-hover:scale-110 drop-shadow-2xl">
                 </div>
-                <div>
-                    <style>.pp-UMRY9D6XUQC5Y{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                        <input class="pp-UMRY9D6XUQC5Y" type="submit" value="Kup teraz" />
-                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                        <section style="font-size: 0.75rem; color: white;"> Obsługiwane przez <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;filter:brightness(0) invert(1);"/></section>
+                <div class="p-8 text-center flex flex-col items-center">
+                    <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">🍮 Słodycz</span>
+                    <h5 class="text-white text-xl font-bold">Patyczek smakowo - zapachowy</h5>
+                    <p class="text-white/80 text-sm mb-4">Karmelowy Slush</p>
+                    <div class="mb-6 text-white">
+                        <span class="line-through text-white/50 text-sm font-light">25,00 zł</span>
+                        <span class="text-2xl font-extrabold ml-2">20,00 zł</span>
+                    </div>
+                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
+                        <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
                     </form>
                 </div>
             </div>
 
-            <div class="bg-gradient-to-b from-emerald-400/50 to-green-600/50 p-6 rounded-[2rem] text-center flex flex-col items-center relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6 flex items-center gap-2 z-10 shadow-md">
-                    🍹 Orzeźwienie
-                </span>
-                <h5 class="text-white text-2xl font-bold mb-1 z-10">Patyczek zapachowo-smakowy</h5>
-                <p class="text-white/80 text-sm mb-8 z-10">Płonące Mojito</p>
-                <div class="mb-8 h-48 flex items-center justify-center">
-                    <img src="mojito.png" alt="V.A.P. Stick Mojito" class="h-full object-contain drop-shadow-2xl transition group-hover:scale-110 duration-500">
+            <div class="group bg-gradient-to-b from-emerald-400/60 to-green-600/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+                <div class="h-64 w-full flex items-center justify-center bg-white/10 relative">
+                    <img src="mojito.png" alt="Mojito" class="h-4/5 object-contain transition duration-500 group-hover:scale-110 drop-shadow-2xl">
                 </div>
-                <div>
-                    <style>.pp-UMRY9D6XUQC5Y{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                        <input class="pp-UMRY9D6XUQC5Y" type="submit" value="Kup teraz" />
-                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                        <section style="font-size: 0.75rem; color: white;"> Obsługiwane przez <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;filter:brightness(0) invert(1);"/></section>
+                <div class="p-8 text-center flex flex-col items-center">
+                    <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">🍹 Orzeźwienie</span>
+                    <h5 class="text-white text-xl font-bold">Patyczek smakowo - zapachowy</h5>
+                    <p class="text-white/80 text-sm mb-4">Płonące Mojito</p>
+                    <div class="mb-6 text-white">
+                        <span class="line-through text-white/50 text-sm font-light">25,00 zł</span>
+                        <span class="text-2xl font-extrabold ml-2">20,00 zł</span>
+                    </div>
+                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
+                        <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
                     </form>
                 </div>
             </div>
 
-            <div class="bg-gradient-to-b from-[#4dd0e1]/50 to-[#00acc1]/50 p-6 rounded-[2rem] text-center flex flex-col items-center relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6 flex items-center gap-2 z-10 shadow-md">
-                    ⚡ Witalność
-                </span>
-                <h5 class="text-white text-2xl font-bold mb-1 z-10">Patyczek zapachowo-smakowy</h5>
-                <p class="text-white/80 text-sm mb-8 z-10">Cytrynowy</p>
-                <div class="mb-8 h-48 flex items-center justify-center">
-                    <img src="cytryna.png" alt="V.A.P. Stick Cytryna" class="h-full object-contain drop-shadow-2xl transition group-hover:scale-110 duration-500">
+            <div class="group bg-gradient-to-b from-[#4dd0e1]/60 to-[#00acc1]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+                <div class="h-64 w-full flex items-center justify-center bg-white/10 relative">
+                    <img src="cytryna.png" alt="Cytryna" class="h-4/5 object-contain transition duration-500 group-hover:scale-110 drop-shadow-2xl">
                 </div>
-                <div>
-                    <style>.pp-UMRY9D6XUQC5Y{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                        <input class="pp-UMRY9D6XUQC5Y" type="submit" value="Kup teraz" />
-                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                        <section style="font-size: 0.75rem; color: white;"> Obsługiwane przez <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;filter:brightness(0) invert(1);"/></section>
+                <div class="p-8 text-center flex flex-col items-center">
+                    <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">⚡ Witalność</span>
+                    <h5 class="text-white text-xl font-bold">Patyczek smakowo - zapachowy</h5>
+                    <p class="text-white/80 text-sm mb-4">Cytrynowy</p>
+                    <div class="mb-6 text-white">
+                        <span class="line-through text-white/50 text-sm font-light">25,00 zł</span>
+                        <span class="text-2xl font-extrabold ml-2">20,00 zł</span>
+                    </div>
+                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
+                        <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
                     </form>
                 </div>
             </div>
 
-            <div class="bg-gradient-to-b from-[#ffb74d]/50 to-[#f57c00]/50 p-6 rounded-[2rem] text-center flex flex-col items-center relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6 flex items-center gap-2 z-10 shadow-md">
-                    😌 Relaks
-                </span>
-                <h5 class="text-white text-2xl font-bold mb-1 z-10">Patyczek zapachowo-smakowy</h5>
-                <p class="text-white/80 text-sm mb-8 z-10">Oolong Brzoskwiniowy</p>
-                <div class="mb-8 h-48 flex items-center justify-center">
-                    <img src="brzoskwinia.png" alt="V.A.P. Stick Brzoskwinia" class="h-full object-contain drop-shadow-2xl transition group-hover:scale-110 duration-500">
+            <div class="group bg-gradient-to-b from-[#ffb74d]/60 to-[#f57c00]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+                <div class="h-64 w-full flex items-center justify-center bg-white/10 relative">
+                    <img src="brzoskwinia.png" alt="Brzoskwinia" class="h-4/5 object-contain transition duration-500 group-hover:scale-110 drop-shadow-2xl">
                 </div>
-                <div>
-                    <style>.pp-UMRY9D6XUQC5Y{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                        <input class="pp-UMRY9D6XUQC5Y" type="submit" value="Kup teraz" />
-                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                        <section style="font-size: 0.75rem; color: white;"> Obsługiwane przez <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;filter:brightness(0) invert(1);"/></section>
+                <div class="p-8 text-center flex flex-col items-center">
+                    <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">😌 Relaks</span>
+                    <h5 class="text-white text-xl font-bold">Patyczek smakowo - zapachowy</h5>
+                    <p class="text-white/80 text-sm mb-4">Oolong Brzoskwiniowy</p>
+                    <div class="mb-6 text-white">
+                        <span class="line-through text-white/50 text-sm font-light">25,00 zł</span>
+                        <span class="text-2xl font-extrabold ml-2">20,00 zł</span>
+                    </div>
+                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
+                        <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
                     </form>
                 </div>
             </div>
 
-            <div class="bg-gradient-to-b from-yellow-300/50 to-amber-500/50 p-6 rounded-[2rem] text-center flex flex-col items-center relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6 flex items-center gap-2 z-10 shadow-md">
-                    🥥 Tropiki
-                </span>
-                <h5 class="text-white text-2xl font-bold mb-1 z-10">Patyczek zapachowo-smakowy</h5>
-                <p class="text-white/80 text-sm mb-8 z-10">Kokos Ananas</p>
-                <div class="mb-8 h-48 flex items-center justify-center">
-                    <img src="kokosananas.png" alt="V.A.P. Stick Kokos Ananas" class="h-full object-contain drop-shadow-2xl transition group-hover:scale-110 duration-500">
+            <div class="group bg-gradient-to-b from-yellow-300/60 to-amber-500/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+                <div class="h-64 w-full flex items-center justify-center bg-white/10 relative">
+                    <img src="kokosananas.png" alt="Kokos" class="h-4/5 object-contain transition duration-500 group-hover:scale-110 drop-shadow-2xl">
                 </div>
-                <div>
-                    <style>.pp-UMRY9D6XUQC5Y{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                        <input class="pp-UMRY9D6XUQC5Y" type="submit" value="Kup teraz" />
-                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                        <section style="font-size: 0.75rem; color: white;"> Obsługiwane przez <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;filter:brightness(0) invert(1);"/></section>
+                <div class="p-8 text-center flex flex-col items-center">
+                    <span class="bg-[#0f2c3a] text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">🥥 Tropiki</span>
+                    <h5 class="text-white text-xl font-bold">Patyczek smakowo - zapachowy</h5>
+                    <p class="text-white/80 text-sm mb-4">Kokos Ananas</p>
+                    <div class="mb-6 text-white">
+                        <span class="line-through text-white/50 text-sm font-light">25,00 zł</span>
+                        <span class="text-2xl font-extrabold ml-2">20,00 zł</span>
+                    </div>
+                    <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
+                        <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
                     </form>
                 </div>
             </div>
@@ -202,12 +198,12 @@
         </div>
     </section>
 
-    <footer class="bg-white py-12 px-6 mt-12 border-t border-slate-100 text-center animate-fade-in delay-300">
+    <footer class="relative z-10 bg-white/20 backdrop-blur-md py-12 px-6 mt-12 border-t border-white/20 text-center animate-fade-in delay-300">
         <h2 class="text-2xl font-light tracking-widest text-slate-800 mb-6">VAP Stick</h2>
-        <div class="text-slate-400 text-sm mb-4">
+        <div class="text-slate-600 text-sm mb-4">
             <p>&copy; 2026 VAP Stick. Wszystkie prawa zastrzeżone.</p>
         </div>
-        <p class="text-[10px] text-slate-300 uppercase tracking-widest font-bold max-w-2xl mx-auto leading-relaxed">
+        <p class="text-[10px] text-slate-700 uppercase tracking-widest font-bold max-w-2xl mx-auto leading-relaxed">
             Urządzenie służy wyłącznie do aromaterapii. Nie zawiera tytoniu, nikotyny ani substancji smolistych.
         </p>
     </footer>
