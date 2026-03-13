@@ -289,10 +289,10 @@
     const body = document.body;
 
     btn.addEventListener('click', () => {
-        // Przełączanie klasy 'dark' na body (wymagane dla Tailwind dark mode)
+        // To aktywuje klasy dark: w całym kodzie HTML
         document.documentElement.classList.toggle('dark');
         
-        // Zmiana kolorów tła body
+        // Zmiana tła body (to co już miałeś)
         if (document.documentElement.classList.contains('dark')) {
             body.classList.remove('from-indigo-400', 'via-purple-300', 'to-pink-200');
             body.classList.add('from-slate-900', 'via-indigo-950', 'to-slate-900');
