@@ -33,22 +33,49 @@
 </head>
 <body class="bg-gradient-to-br from-indigo-400 via-purple-300 to-pink-200 text-slate-900 antialiased overflow-x-hidden min-h-screen">
 
+    <script>
+        // Tutaj zmieniasz wszystkie ceny i stany magazynowe!
+        const PRODUKTY = {
+            mieta: { cena: "30,00 zł", staraCena: "40,00 zł", magazyn: 5 },
+            karmel: { cena: "30,00 zł", staraCena: "40,00 zł", magazyn: 0 },
+            mojito: { cena: "30,00 zł", staraCena: "40,00 zł", magazyn: 2 },
+            cytryna: { cena: "30,00 zł", staraCena: "40,00 zł", magazyn: 10 },
+            brzoskwinia: { cena: "30,00 zł", staraCena: "40,00 zł", magazyn: 0 },
+            kokos: { cena: "30,00 zł", staraCena: "40,00 zł", magazyn: 1 }
+        };
+
+        // Skrypt aktualizujący stronę po załadowaniu
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.produkt-karta').forEach(karta => {
+                const id = karta.dataset.id;
+                if(PRODUKTY[id]) {
+                    karta.querySelector('.stara-cena').innerText = PRODUKTY[id].staraCena;
+                    karta.querySelector('.nowa-cena').innerText = PRODUKTY[id].cena;
+                    
+                    const dostawaInfo = karta.querySelector('.dostawa-info');
+                    if(PRODUKTY[id].magazyn >= 1) {
+                        dostawaInfo.innerHTML = '🚀 <span class="text-green-300">Szybka dostawa</span>';
+                    } else {
+                        dostawaInfo.innerHTML = '⏳ <span class="text-orange-300">Wolniejsza dostawa</span>';
+                    }
+                }
+            });
+        });
+    </script>
+
     <div class="fixed inset-0 z-0 flex items-center justify-center opacity-30 pointer-events-none">
         <img src="vapsticks.png" alt="Background" class="max-w-none w-[180%] h-auto rotate-12 filter blur-[1px] animate-float transition-all transform translate-x-[50%]">
     </div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl px-8 py-4 flex justify-between items-center bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl rounded-full shadow-2xl border border-white/20 transition-all duration-500">
-    
-    <h1 class="text-2xl font-black tracking-tighter text-white drop-shadow-md hover:scale-105 transition-transform cursor-default">
-    VAP Stick Shop
-</h1>
-
-
-    <button id="darkModeToggle" class="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-all group shadow-inner border border-white/10">
-        <span id="sunIcon" class="text-xl">🌙</span>
-        <span id="moonIcon" class="hidden text-xl text-indigo-200">☀️</span>
-    </button>
-</nav>
+        <h1 class="text-2xl font-black tracking-tighter text-white drop-shadow-md hover:scale-105 transition-transform cursor-default">
+            VAP Stick Shop
+        </h1>
+        <button id="darkModeToggle" class="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-all group shadow-inner border border-white/10">
+            <span id="sunIcon" class="text-xl">🌙</span>
+            <span id="moonIcon" class="hidden text-xl text-indigo-200">☀️</span>
+        </button>
+    </nav>
 
     <header class="relative pt-40 pb-24 px-6 text-center z-10 animate-fade-in">
         <div class="max-w-2xl mx-auto relative z-10">
@@ -95,7 +122,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
             
-            <div class="group bg-gradient-to-b from-[#29b6f6]/60 to-[#0288d1]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+            <div data-id="mieta" class="produkt-karta group bg-gradient-to-b from-[#29b6f6]/60 to-[#0288d1]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
                 <div class="h-72 w-full overflow-hidden">
                     <img src="mieta.png" alt="Mięta" class="w-full h-full object-cover transition duration-500">
                 </div>
@@ -106,12 +133,15 @@
                         <p class="text-white/80 text-sm mb-4">Lodowata Mięta</p>
                     </div>
                     <div class="w-full">
-                        <div class="mb-6 text-white">
-                            <span class="line-through text-white/50 text-sm font-light">40,00 zł</span>
-                            <span class="text-2xl font-extrabold ml-2">30,00 zł</span>
+                        <div class="mb-1 text-white">
+                            <span class="stara-cena line-through text-white/50 text-sm font-light"></span>
+                            <span class="nowa-cena text-2xl font-extrabold ml-2"></span>
                         </div>
+                        <div class="dostawa-info mb-4 text-[11px] font-bold tracking-wide"></div>
                         <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
-                            <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
+                            <button type="submit" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md flex justify-center items-center gap-1">
+                                Kup teraz <span class="text-[10px] font-normal opacity-70">+ dostawa</span>
+                            </button>
                         </form>
                         <div class="mt-4 flex flex-col items-center gap-2 opacity-70">
                             <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Metody płatności" class="h-5">
@@ -124,7 +154,7 @@
                 </div>
             </div>
 
-            <div class="group bg-gradient-to-b from-amber-400/60 to-orange-600/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+            <div data-id="karmel" class="produkt-karta group bg-gradient-to-b from-amber-400/60 to-orange-600/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
                 <div class="h-72 w-full overflow-hidden">
                     <img src="karmel.png" alt="Karmel" class="w-full h-full object-cover transition duration-500">
                 </div>
@@ -135,12 +165,15 @@
                         <p class="text-white/80 text-sm mb-4">Karmelowy Slush</p>
                     </div>
                     <div class="w-full">
-                        <div class="mb-6 text-white">
-                            <span class="line-through text-white/50 text-sm font-light">40,00 zł</span>
-                            <span class="text-2xl font-extrabold ml-2">30,00 zł</span>
+                        <div class="mb-1 text-white">
+                            <span class="stara-cena line-through text-white/50 text-sm font-light"></span>
+                            <span class="nowa-cena text-2xl font-extrabold ml-2"></span>
                         </div>
+                        <div class="dostawa-info mb-4 text-[11px] font-bold tracking-wide"></div>
                         <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
-                            <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
+                            <button type="submit" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md flex justify-center items-center gap-1">
+                                Kup teraz <span class="text-[10px] font-normal opacity-70">+ dostawa</span>
+                            </button>
                         </form>
                         <div class="mt-4 flex flex-col items-center gap-2 opacity-70">
                             <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Metody płatności" class="h-5">
@@ -153,7 +186,7 @@
                 </div>
             </div>
 
-            <div class="group bg-gradient-to-b from-emerald-400/60 to-green-600/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+            <div data-id="mojito" class="produkt-karta group bg-gradient-to-b from-emerald-400/60 to-green-600/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
                 <div class="h-72 w-full overflow-hidden">
                     <img src="mojito.png" alt="Mojito" class="w-full h-full object-cover transition duration-500">
                 </div>
@@ -164,12 +197,15 @@
                         <p class="text-white/80 text-sm mb-4">Płonące Mojito</p>
                     </div>
                     <div class="w-full">
-                        <div class="mb-6 text-white">
-                            <span class="line-through text-white/50 text-sm font-light">40,00 zł</span>
-                            <span class="text-2xl font-extrabold ml-2">30,00 zł</span>
+                        <div class="mb-1 text-white">
+                            <span class="stara-cena line-through text-white/50 text-sm font-light"></span>
+                            <span class="nowa-cena text-2xl font-extrabold ml-2"></span>
                         </div>
+                        <div class="dostawa-info mb-4 text-[11px] font-bold tracking-wide"></div>
                         <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
-                            <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
+                            <button type="submit" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md flex justify-center items-center gap-1">
+                                Kup teraz <span class="text-[10px] font-normal opacity-70">+ dostawa</span>
+                            </button>
                         </form>
                         <div class="mt-4 flex flex-col items-center gap-2 opacity-70">
                             <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Metody płatności" class="h-5">
@@ -182,7 +218,7 @@
                 </div>
             </div>
 
-            <div class="group bg-gradient-to-b from-[#4dd0e1]/60 to-[#00acc1]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+            <div data-id="cytryna" class="produkt-karta group bg-gradient-to-b from-[#4dd0e1]/60 to-[#00acc1]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
                 <div class="h-72 w-full overflow-hidden">
                     <img src="cytryna.png" alt="Cytryna" class="w-full h-full object-cover transition duration-500">
                 </div>
@@ -193,12 +229,15 @@
                         <p class="text-white/80 text-sm mb-4">Cytrynowy</p>
                     </div>
                     <div class="w-full">
-                        <div class="mb-6 text-white">
-                            <span class="line-through text-white/50 text-sm font-light">40,00 zł</span>
-                            <span class="text-2xl font-extrabold ml-2">30,00 zł</span>
+                        <div class="mb-1 text-white">
+                            <span class="stara-cena line-through text-white/50 text-sm font-light"></span>
+                            <span class="nowa-cena text-2xl font-extrabold ml-2"></span>
                         </div>
+                        <div class="dostawa-info mb-4 text-[11px] font-bold tracking-wide"></div>
                         <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
-                            <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
+                            <button type="submit" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md flex justify-center items-center gap-1">
+                                Kup teraz <span class="text-[10px] font-normal opacity-70">+ dostawa</span>
+                            </button>
                         </form>
                         <div class="mt-4 flex flex-col items-center gap-2 opacity-70">
                             <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Metody płatności" class="h-5">
@@ -211,7 +250,7 @@
                 </div>
             </div>
 
-            <div class="group bg-gradient-to-b from-[#ffb74d]/60 to-[#f57c00]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+            <div data-id="brzoskwinia" class="produkt-karta group bg-gradient-to-b from-[#ffb74d]/60 to-[#f57c00]/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
                 <div class="h-72 w-full overflow-hidden">
                     <img src="brzoskwinia.png" alt="Brzoskwinia" class="w-full h-full object-cover transition duration-500">
                 </div>
@@ -222,12 +261,15 @@
                         <p class="text-white/80 text-sm mb-4">Oolong Brzoskwiniowy</p>
                     </div>
                     <div class="w-full">
-                        <div class="mb-6 text-white">
-                            <span class="line-through text-white/50 text-sm font-light">40,00 zł</span>
-                            <span class="text-2xl font-extrabold ml-2">30,00 zł</span>
+                        <div class="mb-1 text-white">
+                            <span class="stara-cena line-through text-white/50 text-sm font-light"></span>
+                            <span class="nowa-cena text-2xl font-extrabold ml-2"></span>
                         </div>
+                        <div class="dostawa-info mb-4 text-[11px] font-bold tracking-wide"></div>
                         <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
-                            <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
+                            <button type="submit" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md flex justify-center items-center gap-1">
+                                Kup teraz <span class="text-[10px] font-normal opacity-70">+ dostawa</span>
+                            </button>
                         </form>
                         <div class="mt-4 flex flex-col items-center gap-2 opacity-70">
                             <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Metody płatności" class="h-5">
@@ -240,7 +282,7 @@
                 </div>
             </div>
 
-            <div class="group bg-gradient-to-b from-yellow-300/60 to-amber-500/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
+            <div data-id="kokos" class="produkt-karta group bg-gradient-to-b from-yellow-300/60 to-amber-500/60 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col border border-white/20">
                 <div class="h-72 w-full overflow-hidden">
                     <img src="kokosananas.png" alt="Kokos" class="w-full h-full object-cover transition duration-500">
                 </div>
@@ -251,12 +293,15 @@
                         <p class="text-white/80 text-sm mb-4">Kokos Ananas</p>
                     </div>
                     <div class="w-full">
-                        <div class="mb-6 text-white">
-                            <span class="line-through text-white/50 text-sm font-light">40,00 zł</span>
-                            <span class="text-2xl font-extrabold ml-2">30,00 zł</span>
+                        <div class="mb-1 text-white">
+                            <span class="stara-cena line-through text-white/50 text-sm font-light"></span>
+                            <span class="nowa-cena text-2xl font-extrabold ml-2"></span>
                         </div>
+                        <div class="dostawa-info mb-4 text-[11px] font-bold tracking-wide"></div>
                         <form action="https://www.paypal.com/ncp/payment/UMRY9D6XUQC5Y" method="post" target="_blank" class="w-full">
-                            <input type="submit" value="Kup teraz" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md">
+                            <button type="submit" class="w-full bg-[#FFD140] hover:bg-[#ffc107] text-black font-bold py-3 rounded-xl cursor-pointer transition-colors shadow-md flex justify-center items-center gap-1">
+                                Kup teraz <span class="text-[10px] font-normal opacity-70">+ dostawa</span>
+                            </button>
                         </form>
                         <div class="mt-4 flex flex-col items-center gap-2 opacity-70">
                             <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Metody płatności" class="h-5">
@@ -273,41 +318,41 @@
     </section>
 
     <footer class="relative z-10 bg-white/10 backdrop-blur-md py-12 px-6 mt-12 border-t border-white/20 text-center">
-    <h2 class="text-2xl font-bold tracking-widest text-white drop-shadow-[0_0_8px_rgba(0,0,0,0.5)] mb-6">VAP Stick</h2>
-    
-    <div class="text-white/90 text-sm mb-4 drop-shadow-sm">
-        <p>&copy; 2026 VAP Stick. Wszystkie prawa zastrzeżone.<br>
-        Kontakt: jakubeloziom@gmail.com</p>
-    </div>
-
-    <p class="text-[10px] text-white uppercase tracking-widest font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-        Urządzenie służy wyłącznie do aromaterapii. Nie zawiera tytoniu, nikotyny ani substancji smolistych.
-    </p>
-</footer>
-
-</body>
-    <script>
-    const btn = document.getElementById('darkModeToggle');
-    const sun = document.getElementById('sunIcon');
-    const moon = document.getElementById('moonIcon');
-    const body = document.body;
-
-    btn.addEventListener('click', () => {
-        // Przełączanie klasy 'dark' na body (wymagane dla Tailwind dark mode)
-        document.documentElement.classList.toggle('dark');
+        <h2 class="text-2xl font-bold tracking-widest text-white drop-shadow-[0_0_8px_rgba(0,0,0,0.5)] mb-6">VAP Stick</h2>
         
-        // Zmiana kolorów tła body
-        if (document.documentElement.classList.contains('dark')) {
-            body.classList.remove('from-indigo-400', 'via-purple-300', 'to-pink-200');
-            body.classList.add('from-slate-900', 'via-indigo-950', 'to-slate-900');
-            sun.classList.add('hidden');
-            moon.classList.remove('hidden');
-        } else {
-            body.classList.add('from-indigo-400', 'via-purple-300', 'to-pink-200');
-            body.classList.remove('from-slate-900', 'via-indigo-950', 'to-slate-900');
-            sun.classList.remove('hidden');
-            moon.classList.add('hidden');
-        }
-    });
-</script>
-                        </html>
+        <div class="text-white/90 text-sm mb-4 drop-shadow-sm">
+            <p>&copy; 2026 VAP Stick. Wszystkie prawa zastrzeżone.<br>
+            Kontakt: jakubeloziom@gmail.com</p>
+        </div>
+
+        <p class="text-[10px] text-white uppercase tracking-widest font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+            Urządzenie służy wyłącznie do aromaterapii. Nie zawiera tytoniu, nikotyny ani substancji smolistych.
+        </p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('darkModeToggle');
+        const sun = document.getElementById('sunIcon');
+        const moon = document.getElementById('moonIcon');
+        const body = document.body;
+
+        btn.addEventListener('click', () => {
+            // Przełączanie klasy 'dark' na body (wymagane dla Tailwind dark mode)
+            document.documentElement.classList.toggle('dark');
+            
+            // Zmiana kolorów tła body
+            if (document.documentElement.classList.contains('dark')) {
+                body.classList.remove('from-indigo-400', 'via-purple-300', 'to-pink-200');
+                body.classList.add('from-slate-900', 'via-indigo-950', 'to-slate-900');
+                sun.classList.add('hidden');
+                moon.classList.remove('hidden');
+            } else {
+                body.classList.add('from-indigo-400', 'via-purple-300', 'to-pink-200');
+                body.classList.remove('from-slate-900', 'via-indigo-950', 'to-slate-900');
+                sun.classList.remove('hidden');
+                moon.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
